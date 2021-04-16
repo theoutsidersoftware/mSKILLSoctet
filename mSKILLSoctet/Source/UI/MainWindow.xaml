@@ -1,0 +1,68 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ui="clr-namespace:mSKILLSoctet.Source.UI"
+        x:Class="mSKILLSoctet.Source.UI.MainWindow"
+        mc:Ignorable="d"
+        Title="mSKILLSoctet" Height="445" Width="890" ResizeMode="CanMinimize" Icon="/Resources/Icon.ico">
+    <Grid Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Height="445" Width="880" Margin="0,0,0,0">
+        <DockPanel>
+            <Menu>
+                <MenuItem Header="Help">
+                    <MenuItem Name="AboutMenuItem" Header="About" Click="AboutMenuItem_Click" />
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        <TextBox Name="OctetTextbox" HorizontalAlignment="Left" Margin="10,376,0,49" Width="552" Height="20" TextWrapping="NoWrap" AcceptsReturn="False"/>
+        <ui:SelectableListView x:Name="SelectedSkillsView" Margin="10,53,0,0" HorizontalAlignment="Left" Width="440" SelectionMode="Extended" Height="318" VerticalAlignment="Top">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="50" Header="Id"
+                                    DisplayMemberBinding="{Binding Id}"  />
+                    <GridViewColumn Width="300" Header="Name"
+                                    DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Width="60" Header="Level"
+                                    DisplayMemberBinding="{Binding DisplayLevel}" />
+                </GridView>
+            </ListView.View>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListViewItem}">
+                    <Setter Property="ToolTip" Value="{Binding Description}" />
+                    <Setter Property="ToolTipService.InitialShowDelay" Value="0"/>
+                    <Setter Property="ToolTipService.ShowDuration" Value="86400"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ui:SelectableListView>
+        <ListView Name="AvaliableSkillsView" Height="318" Width="380" VerticalAlignment="Top" Margin="485,53,15,0" SelectionMode="Extended">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="50" Header="Id"
+                                    DisplayMemberBinding="{Binding Id}"  />
+                    <GridViewColumn Width="300" Header="Name"
+                                    DisplayMemberBinding="{Binding Name}" />
+                </GridView>
+            </ListView.View>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListViewItem}">
+                    <Setter Property="ToolTip" Value="{Binding Description}" />
+                    <Setter Property="ToolTipService.InitialShowDelay" Value="0"/>
+                    <Setter Property="ToolTipService.ShowDuration" Value="86400"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+        <Button Name="ImportButton" Content="Import" HorizontalAlignment="Left" Margin="567,376,0,0" Width="96" Click="ImportButton_Click" Height="20" VerticalAlignment="Top" />
+        <Button Name="GenerateButton" Content="Generate" Margin="769,376,0,0" HorizontalAlignment="Left" Width="96" Click="GenerateButton_Click" RenderTransformOrigin="0.499,0.939" Height="20" VerticalAlignment="Top" Background="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}"/>
+        <Button Name="SearchButton" Content="Search" HorizontalAlignment="Left" Margin="668,376,0,0" Width="96" Height="20" VerticalAlignment="Top" Click="SearchButton_Click" />
+        <ComboBox Name="PresetsSelector"  Margin="485,28,15,0" VerticalAlignment="Top" Height="20" SelectionChanged="PresetsSelector_SelectionChanged"/>
+        <Button Name="AddSkill" Content="&lt;-" Margin="455,181,400,0" VerticalAlignment="Top" Height="25" Width="25" Click="AddSkill_Click"/>
+        <Button Name="RemoveSkill" Content="-&gt;" Margin="455,211,400,0" VerticalAlignment="Top" Height="25" Width="25" Click="RemoveSkill_Click"/>
+        <RepeatButton Name="IncreaseLevelButton" Content="+ Level" HorizontalAlignment="Left" Margin="307,28,0,0" VerticalAlignment="Top" Width="69" Height="20" RenderTransformOrigin="0.887,0.573" Click="IncreaseLevelButton_Click"/>
+        <RepeatButton Name="DecreaseLevelButton" Content="- Level" HorizontalAlignment="Right" Margin="0,28,727,0" VerticalAlignment="Top" Width="69" Height="20" RenderTransformOrigin="0.262,0.462" Click="DecreaseLevelButton_Click"/>
+        <Button Name="MinLevelButton" Content="Level 1" HorizontalAlignment="Right" Margin="0,28,801,0" VerticalAlignment="Top" Width="69" Height="20" RenderTransformOrigin="0.262,0.462" Click="MinLevelButton_Click"/>
+        <Button Name="MaxLevelButton" Content="Level 10" HorizontalAlignment="Right" Margin="0,28,430,0" VerticalAlignment="Top" Width="69" Height="20" RenderTransformOrigin="0.262,0.462" Click="MaxLevelButton_Click"/>
+        <RepeatButton Name="IncreaseMasteryButton" Content="+ Mastery" HorizontalAlignment="Right" Margin="0,28,578,0" VerticalAlignment="Top" Width="69" Height="20" RenderTransformOrigin="0.262,0.462" Click="IncreaseMasteryButton_Click"/>
+        <RepeatButton Name="DecreaseMasteryButton" Content="- Mastery" HorizontalAlignment="Right" Margin="0,28,653,0" VerticalAlignment="Top" Width="69" Height="20" RenderTransformOrigin="0.262,0.462" Click="DecreaseMasteryButton_Click"/>
+    </Grid>
+</Window>
