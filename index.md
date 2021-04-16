@@ -1,37 +1,65 @@
-## Welcome to GitHub Pages
+# mSKILLSoctet
 
-You can use the [editor on GitHub](https://github.com/theoutsidersoftware/mSKILLSoctet/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+A Minimal Skills Octet Tool for Perfect World.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+This project was originally released on RaGEZONE as v1.0.0.0. This project was
+re-released under the GPL license as of v1.0.1.
 
-### Markdown
+## What is it?
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+This is a tool for modifying and generating the skills octet/hex string of a
+character's role xml. A charcter's role xml can be modified using something like
+iweb or pwAdmin.
 
-```markdown
-Syntax highlighted code block
+This is a "minimal" tool. In other words, the editor only includes basic
+functionalities to allow you to modify values.
 
-# Header 1
-## Header 2
-### Header 3
+## Why modify the skills octet?
 
-- Bulleted
-- List
+While this tool is not very useful on a Production server, it has came in handy
+to me many times during Development. Personally, I have repeatedly experimented
+with the new Primal skills, resulting in me having to learn/unlearn them many
+times. Since there is no in game method of unlearning a skill, I developed this
+tool to allow me to do so.
 
-1. Numbered
-2. List
+## How to edit?
 
-**Bold** and _Italic_ and `Code` text
+1. Use a tool that can modify role xml, such as iweb or pwAdmin.
+2. On a character's role xml, find the skills element.
+3. Copy the octet into the editor.
+4. Press the Import button.
+5. Modify the skills as you see fit. (Use the -/+ Level button to adjust the
+   skill's level. Use the -/+ Mastery button for crafting skills. Use the arrow
+   buttons to add or remove skill.)
+6. Press the Generate button.
+7. Copy the generated octet and paste it into the editor, replacing the old
+   octet.
+8. Save the character's role xml (character must be logged out).
 
-[Link](url) and ![Image](src)
-```
+## Who made it?
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+This tool was made by myself.
 
-### Jekyll Themes
+There are no documentations on the structure of the skills octet that I am aware
+of. However, the structure of the octet is fairly simple, so I was able to
+derive it myself.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/theoutsidersoftware/mSKILLSoctet/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+## Where can it be used?
 
-### Support or Contact
+While I have found editors with similar functionalities, they are all either not
+in English, or out of date. For that reason, this editor will load skillstr.txt
+to get a list of available skills, as opposed to having them hardcoded. So in
+theory, this editor should work on past versions as well as future versions of
+the game, as long as the structure of the skills octet remains constant.
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+However, this was only actually tested on 1.5.3.
+
+You will need the .NET Framework v4.6.1 to run the editor.
+
+## Screenshot
+
+![Image of Main Window](main.png)
+
+## License
+
+mSKILLSoctet is available under the [GPL license](https://www.gnu.org/licenses/gpl-3.0.en.html).
