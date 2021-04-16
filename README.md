@@ -6,6 +6,9 @@ fork it to your own repository.**
 
 A Minimal Skills Octet Tool for Perfect World.
 
+This project was originally released on RaGEZONE as v1.0.0.0. This project was
+re-released under the GPL license as of v1.0.1.
+
 ## What is it?
 
 This is a tool for modifying and generating the skills octet/hex string of a
